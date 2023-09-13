@@ -1,0 +1,26 @@
+Write your own library, containing an extract of important functions.
+Functions list:
+- [x] memset 
+- [x] bzero 
+- [x] memcpy
+- [x] memccpy
+- [x] memmove
+- [x] memchr
+- [x] memcmp
+- [x] strlen
+- [x] strlcpy 
+- [ ] strlcat 
+- [ ] strchr
+- [ ] strrchr 
+- [ ] strnstr 
+- [ ] strncmp
+- [ ] atoi
+- [ ] isalpha 
+- [ ] isdigit 
+- [ ] isalnum 
+- [ ] isascii 
+- [ ] isprint 
+- [ ] toupper 
+- [ ] tolower
+- [ ] calloc
+- [ ] strdup
