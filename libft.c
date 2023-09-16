@@ -76,8 +76,8 @@ void *ft_memchr(const void *s, int c, size_t n)
 {
     unsigned char *src = (unsigned char *) s;
     while(n--){
-        if((unsigned char) *src == (unsigned char) c){ //Maybe broken missing pointer arithmetic (src++)
-            return src;
+        if((unsigned char) *src++ == (unsigned char) c){
+            return src - 1;
         }
     }
     return (NULL);
@@ -162,13 +162,36 @@ size_t strlcpy(char *dst, const char *src, size_t size)
 }
 
 /*
- * strlcat
+ * append src to end of dst
  *
  */
-
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
+    size_t maximum = size - ft_strlen(dst) - 1;    /* Maximum number of characters we can append */
     size_t srclen = ft_strlen(src);
-    size_t dstlen = ft_strlen(dst);
-
+    size_t dstlen = ft_strnlen(dst, size); 
+    if(dstlen == size) return size + srclen:        
+    if(srclen < size - dstlen){    /* If the src fit inside size we memcpy */
+        ft_memcpy(dst + dstlen, src, srclen + 1);
+    } else {
+        ft_memcpy(dst + dstlen, src, maxlen -1);
+        dst[dstlen + maxlen - 1] = '\0';
+    }
+    return dstlen + srclen; 
 }
+
+/*
+ * The  strchr()  function  returns a pointer to the first occurrence of the character c in
+ * the string s.
+ */
+char *ft_strchr(const char *s, int c)
+{
+    return ft_memchr(s, c, ft_strlen(s));
+}
+
+
+
+
+
+
+

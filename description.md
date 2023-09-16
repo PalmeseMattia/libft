@@ -9,8 +9,8 @@ Functions list:
 - [x] memcmp
 - [x] strlen
 - [x] strlcpy 
-- [ ] strlcat 
-- [ ] strchr
+- [x] strlcat 
+- [x] strchr
 - [ ] strrchr 
 - [ ] strnstr 
 - [ ] strncmp
