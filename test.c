@@ -1,41 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
 
-#define ONES ((size_t)-1/UCHAR_MAX)
-#define HIGHS (ONES * (UCHAR_MAX/2+1))
+void *ft_memcpy(void *dest, const void *src, size_t n);
 
-
-size_t strlcpy(char *dst, const char *src, size_t size);
-
-int main(void){
-	char first[] = "Bella";
-    char second[] = "NOOO";
-    strlcpy(first, second, (sizeof(first) / sizeof(char)));
-    printf("%s\n", first);
-    return 0;
+int main(void)
+{
+	size_t BUFSIZE = 2;
+	char str1[] = "zio";
+	char str2[] = "zia";
+    	printf("size of zio: %ld\n", sizeof(str1));
+	printf("size of zia: %ld\n", sizeof(str2));
+	char result[2];
+	printf("size of concat: %ld\n", sizeof(result));
+	// copying first string to result
+	char *firstcopy = ft_memcpy(result, str1, sizeof(str1) - 1);
+	ft_memcpy(result + (sizeof(str1)-1), str2, sizeof(str2));
+	printf("first copy result: %s\n", firstcopy);
+	return 0;
 }
 
-size_t strlcpy(char *dst, const char *src, size_t size){
-    const char *s = src;
-	unsigned char *d = dst;
-    size_t n = size;
-
-    while(n--){
-        if((*d++ = *s++) == '\0'){ /* assign and at the same time check if string endend */ 
-            break;
-        }
-    }
-
-	/* Not enough room in dst, add NULL and traverse rest of src */
-    if (n == 0) {
-		if (size != 0)
-			*d = '\0';		/* NULL-terminate dst */
-		while (*s++)
-			;
+void *ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char *d = (unsigned char *) dest;
+	unsigned char *s = (unsigned char *) src;
+     	while(n--){
+		*d++ = *s++;
 	}
-
-    return(s - src - 1);	/* count does not include NUL */
+	return (dest);
 }
-
 

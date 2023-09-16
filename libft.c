@@ -70,7 +70,7 @@ void *ft_memmove(void *dest, const void *src, size_t n){
 void *ft_memchr(const void *s, int c, size_t n){
     unsigned char *src = (unsigned char *) s;
     while(n--){
-        if((unsigned char) *src == (unsigned char) c){
+        if((unsigned char) *src == (unsigned char) c){ //Maybe broken missing pointer arithmetic (src++)
             return src;
         }
     }
@@ -142,4 +142,8 @@ size_t strlcpy(char *dst, const char *src, size_t size){
     return(s - src - 1);	/* count does not include NUL */
 }
 
+/*
+ * strlcat
+ *
+ */
 
