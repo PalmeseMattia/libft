@@ -111,8 +111,8 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 }
 
 /*
- *  The strlen() function calculates the length of the string pointed to by
- *  s, excluding the terminating null byte ('\0').
+ * The strlen() function calculates the length of the string pointed to by
+ * s, excluding the terminating null byte ('\0').
  */
 size_t ft_strlen(const char *s)
 {
@@ -122,16 +122,19 @@ size_t ft_strlen(const char *s)
 }
 
 /*
- * 
+ * The strnlen() function determines the length of a fixed-size string.
+ * It returns strlen(s), if that is less than maxlen,  or  maxlen  if
+ * there is no null terminating ('\0') among the first maxlen characters pointed to by s.
  */
 size_t ft_strnlen(const char *s, size_t maxlen)
 {
     size_t len;
-    for(len = 0; len < maxlen; len++){
+    for(len = 0; len < maxlen; len++, s++){
         if(!*s) break;
     }
     return len;
 }
+
 /*
  * The strlcpy() and strlcat() functions copy and 
  * concatenate strings respectively.
