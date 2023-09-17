@@ -90,7 +90,7 @@ void *ft_memchr(const void *s, int c, size_t n)
  */
 void *ft_memrchr(const void *s, int c, size_t n)
 {
-    unsigned char *src = (unsigned char *) s + n - 1;
+    unsigned char *src = (unsigned char *) s + n;
     while(n--){
         if((unsigned char) *src-- == (unsigned char) c){
             return src + 1;
@@ -203,6 +203,11 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 char *ft_strchr(const char *s, int c)
 {
     return ft_memchr(s, c, ft_strlen(s));
+}
+
+char *ft_strrchr(const char *s, int c)
+{
+    return ft_memrchr(s, c, ft_strlen(s));
 }
 
 
