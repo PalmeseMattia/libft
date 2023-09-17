@@ -11,9 +11,9 @@ Functions list:
 - [x] strlcpy 
 - [x] strlcat 
 - [x] strchr
-- [ ] strrchr 
+- [x] strrchr 
 - [ ] strnstr 
-- [ ] strncmp
+- [x] strncmp
 - [ ] atoi
 - [ ] isalpha 
 - [ ] isdigit 
