@@ -24,3 +24,6 @@ Functions list:
 - [ ] tolower
 - [ ] calloc
 - [ ] strdup
+
+Extra functions:
+- [x] strcmp

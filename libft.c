@@ -226,7 +226,25 @@ int ft_strcmp(const char *s1, const char *s2)
     return *(const unsigned char)s1 - *(const unsigned char)s2;
 }
 
-
+int ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+    while((*s1 && (*s1 == *s2)) || n--){
+            s1++, s2++;
+    }
+    return *(const unsigned char*)s1 - *(const unsigned char*)s2;
+}
+/*
+ * The strnstr() function locates the first occurence of the null-terminated string little(needle) 
+ * in the null-terminated string big(haystack)
+ */
+char *ft_strnstr(const char *big, const char *little, size_t len)
+{
+    // we can traverse the string until sizeof(little) is <= sizeof(big + n) 
+    // where n is our current step, since we are moving our big pointer there is no need 
+    // to add n
+    const char 
+      
+}
 
 
 
