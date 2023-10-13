@@ -183,10 +183,10 @@ size_t strlcpy(char *dst, const char *src, size_t size)
  */
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t maximum = size - ft_strlen(dst) - 1;    /* Maximum number of characters we can append */
+    size_t maxlen= size - ft_strlen(dst) - 1;    /* Maximum number of characters we can append */
     size_t srclen = ft_strlen(src);
     size_t dstlen = ft_strnlen(dst, size); 
-    if(dstlen == size) return size + srclen:        
+    if(dstlen == size) return size + srclen;        
     if(srclen < size - dstlen){    /* If the src fit inside size we memcpy */
         ft_memcpy(dst + dstlen, src, srclen + 1);
     } else {
@@ -223,7 +223,7 @@ int ft_strcmp(const char *s1, const char *s2)
     while(*s1 && (*s1 == *s2)){
             s1++, s2++;
     }
-    return *(const unsigned char)s1 - *(const unsigned char)s2;
+    return *(const unsigned char*)s1 - *(const unsigned char*)s2;
 }
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -239,13 +239,19 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
  */
 char *ft_strnstr(const char *big, const char *little, size_t len)
 {
-    // we can traverse the string until sizeof(little) is <= sizeof(big + n) 
-    // where n is our current step, since we are moving our big pointer there is no need 
-    // to add n
-    const char 
-      
+    if(*little){
+        return (char *)big;
+     }
+    
 }
 
-
-
+int main(void)
+{
+    char dst[] = "okok";
+    char src[] = "koko";
+    strlcpy(dst, src, 4);
+    printf("%s\n", dst);
+    return 0;
+ //size_t strlcpy(char *dst, const char *src, size_t size)    
+}
 
