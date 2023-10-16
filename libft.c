@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdio.h>
+#include<stdint.h>
 
 /*
  * Fill memory with a constant byte.
@@ -248,24 +249,29 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
     }
     return *(const unsigned char*)s1 - *(const unsigned char*)s2;
 }
+
 /*
- * The strnstr() function locates the first occurence of the null-terminated string little(needle) 
- * in the null-terminated string big(haystack)
+ * The atoi() function converts the initial portion of the string pointed to by nptr to int.
  */
-char *ft_strnstr(const char *big, const char *little, size_t len)
+int atoi(const char *nptr)
 {
-    if(*little){
-        return (char *)big;
-     }
-    
+	int result = 0;
+	int sign = 1;
+	while(*nptr){
+		if(*nptr == '-'){
+			sign *= -1;
+		} else if(*nptr >= '0' && *nptr <= '9'){
+			result = result * 10 + (*nptr - '0');
+		}
+		nptr++;
+	}
+	return result * sign;
 }
 
 int main(void)
 {
-    char dst[] = "okok";
-    char src[] = "koko";
-    strlcpy(dst, src, 4);
-    printf("%s\n", dst);
+    char dst[] = "-30";
+    printf("%d\n", atoi(dst));
     return 0;
  //size_t strlcpy(char *dst, const char *src, size_t size)    
 }

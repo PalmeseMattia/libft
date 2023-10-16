@@ -14,7 +14,7 @@ Functions list:
 - [x] strrchr 
 - [ ] strnstr 
 - [x] strncmp
-- [ ] atoi
+- [x] atoi
 - [ ] isalpha 
 - [ ] isdigit 
 - [ ] isalnum 
