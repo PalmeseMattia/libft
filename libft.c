@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stdint.h>
 #include<limits.h>
+#include<stdlib.h>
 
 /*
  * Fill memory with a constant byte.
@@ -174,7 +175,7 @@ size_t ft_strnlen(const char *s, size_t maxlen)
  * Note that a byte for the NULL should be included in size.
  * Android style
  */
-size_t strlcpy(char *dst, const char *src, size_t size)
+size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
     const char *s = src;
 	unsigned char *d = dst;
@@ -314,9 +315,14 @@ int ft_tolower(int c)
     return ((c >= 'A' && c <= 'Z') ? c + 32 : c);
 }
 
+/*
+ * The calloc() function allocates memory for an array of nmemb elements of 
+ * size bytes each and returns a pointer to  the  allocated memory.  
+ * The memory is set to zero.
+ */
 void *ft_calloc(size_t nmemb, size_t size)
 {
-    if(nmemb == 0 || size == 0 || p == NULL){
+    if(nmemb == 0 || size == 0){
         return NULL;
     } //Todo return error for integer overflow of nmemb * size
     void *p = malloc(nmemb * size);
@@ -324,9 +330,22 @@ void *ft_calloc(size_t nmemb, size_t size)
     return p;
 }
 
+/*
+ * The  strdup()  function returns a pointer to a new string which is a duplicate 
+ * of the string s.  Memory for the new string is obtained with malloc(3), 
+ * and can be freed with free(3).
+ */
+char *ft_strdup(const char *s)
+{
+    char *p = malloc(ft_strlen(s));
+    ft_strlcpy(p,s, ft_strlen(s));
+    return p;
+}
+
 int main(void)
 {
-    printf("%d\n", MAX_INT); 
+    char src[] = "source";
+    printf("%s\n", ft_strdup(src)); 
     return 0;
  //size_t strlcpy(char *dst, const char *src, size_t size)    
 }

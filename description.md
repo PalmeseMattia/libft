@@ -23,7 +23,7 @@ Functions list:
 - [x] toupper 
 - [x] tolower
 - [x] calloc
-- [ ] strdup
+- [x] strdup
 
 Extra functions:
 - [x] strcmp
