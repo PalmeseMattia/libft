@@ -34,5 +34,6 @@ int      ft_toupper (int c);
 int      ft_tolower (int c);
 void    *ft_calloc  (size_t nmemb, size_t size);
 char    *ft_strdup  (const char *s);
+char    *strnstr    (const char *s, const char *find, size_t slen);
 
 #endif
