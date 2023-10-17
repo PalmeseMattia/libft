@@ -1,6 +1,7 @@
-#include <string.h>
-#include <stdio.h>
+#include<string.h>
+#include<stdio.h>
 #include<stdint.h>
+#include<limits.h>
 
 /*
  * Fill memory with a constant byte.
@@ -253,12 +254,12 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 /*
  * The atoi() function converts the initial portion of the string pointed to by nptr to int.
  */
-int atoi(const char *nptr)
+int ft_atoi(const char *nptr)
 {
-	int result = 0;
+    int result = 0;
 	int sign = 1;
 	while(*nptr){
-		if(*nptr == '-'){
+	    if(*nptr == '-'){
 			sign *= -1;
 		} else if(*nptr >= '0' && *nptr <= '9'){
 			result = result * 10 + (*nptr - '0');
@@ -268,10 +269,64 @@ int atoi(const char *nptr)
 	return result * sign;
 }
 
+int ft_isupper(int c)
+{
+    return ((c >= 'A' && c <= 'Z') ? 1 : 0);
+}
+
+int ft_islower(int c)
+{
+    return ((c >= 'a' && c <= 'z') ? 1 : 0);
+}
+
+int ft_isalpha(int c)
+{
+    return (ft_islower(c) || ft_isupper(c));
+}
+
+int ft_isdigit(int c)
+{
+    return ((c >= '0' && c <= '9') ? 1 : 0);
+}
+
+int ft_isalnum(int c)
+{
+    return (ft_isdigit(c) || ft_isalpha(c));
+}
+
+int ft_isascii(int c)
+{
+    return ((c >= 0 && c <= 127) ? 1 : 0);
+}
+
+int ft_isprint(int c)
+{
+    return ((c >= ' ' && c <= '~') ? 1 : 0);
+}
+
+int ft_toupper(int c)
+{
+    return ((c >= 'a' && c <= 'z') ? c - 32 : c);
+}
+
+int ft_tolower(int c)
+{
+    return ((c >= 'A' && c <= 'Z') ? c + 32 : c);
+}
+
+void *ft_calloc(size_t nmemb, size_t size)
+{
+    if(nmemb == 0 || size == 0 || p == NULL){
+        return NULL;
+    } //Todo return error for integer overflow of nmemb * size
+    void *p = malloc(nmemb * size);
+    ft_bzero(p, nmemb);
+    return p;
+}
+
 int main(void)
 {
-    char dst[] = "-30";
-    printf("%d\n", atoi(dst));
+    printf("%d\n", MAX_INT); 
     return 0;
  //size_t strlcpy(char *dst, const char *src, size_t size)    
 }

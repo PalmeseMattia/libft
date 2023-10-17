@@ -15,15 +15,17 @@ Functions list:
 - [ ] strnstr 
 - [x] strncmp
 - [x] atoi
-- [ ] isalpha 
-- [ ] isdigit 
-- [ ] isalnum 
-- [ ] isascii 
-- [ ] isprint 
-- [ ] toupper 
-- [ ] tolower
-- [ ] calloc
+- [x] isalpha 
+- [x] isdigit 
+- [x] isalnum 
+- [x] isascii 
+- [x] isprint 
+- [x] toupper 
+- [x] tolower
+- [x] calloc
 - [ ] strdup
 
 Extra functions:
 - [x] strcmp
+- [x] isupper
+- [x] islower
