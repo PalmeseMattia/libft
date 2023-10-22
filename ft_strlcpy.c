@@ -9,7 +9,7 @@
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
     const char *s = src;
-	unsigned char *d = dst;
+	unsigned char *d = (unsigned char *)dst;
     size_t n = size;
 
     while(n--){
