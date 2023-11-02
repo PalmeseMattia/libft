@@ -1,14 +1,12 @@
-.RECIPEPREFIX += 
-
 CC = gcc
 
-CFLAGS = -Wall -Wextra 
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
-SRC = *.c
+SRC = $(wildcard *.c)
 
-OBJS = *.o
+OBJS = $(SRC:.c=.o)
 
 HEADER = libft.h
 
