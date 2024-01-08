@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/08 12:06:51 by dpalmese          #+#    #+#             */
+/*   Updated: 2024/01/08 12:06:54 by dpalmese         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 /*
@@ -15,14 +26,19 @@
  * If n is zero, the return value is zero.
  * TODO: optimize like musl implementation
  */
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    const unsigned char *src1 = s1;
-    const unsigned char *src2 = s2;
-    for(; n--; src1++, src2++){
-        if(*src1 != *src2){
-            return (*src1 - *src2);
-        }
-    }
-    return 0;
+	const unsigned char	*src1 = s1;
+	const unsigned char	*src2 = s2;
+
+	while (n--)
+	{
+		if (*src1 != *src2)
+		{
+			return (*src1 - *src2);
+		}
+		src1++;
+		src2++;
+	}
+	return (0);
 }
