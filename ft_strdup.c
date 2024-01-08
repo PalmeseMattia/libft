@@ -6,7 +6,7 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 12:38:34 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/01/08 12:39:10 by dpalmese         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:12:16 by dpalmese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,7 +21,9 @@ char	*ft_strdup(const char *s)
 {
 	char	*p;
 
-	p = malloc(ft_strlen(s));
-	ft_strlcpy(p, s, ft_strlen(s));
+	p = malloc(ft_strlen(s) + 1);
+	if (!p)
+		return (NULL);
+	ft_strlcpy(p, s, ft_strlen(s) + 1);
 	return (p);
 }

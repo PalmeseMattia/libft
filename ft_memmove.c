@@ -6,7 +6,7 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 12:27:58 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/01/08 12:33:02 by dpalmese         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:08:37 by dpalmese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,7 +21,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	uint8_t	*from;
 	uint8_t	*to;
 	int		i;
-	size_t	i;
 
 	from = (uint8_t *)src;
 	to = (uint8_t *)dest;
