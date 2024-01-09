@@ -28,7 +28,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (dest);
 	if (to > from && to - from < (int)n)
 	{
-		i = n;
+		i = n - 1;
 		while (i >= 0)
 		{
 			to[i] = from[i];
