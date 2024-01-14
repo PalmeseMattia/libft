@@ -19,24 +19,29 @@
  */
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	const char		*s = src;
+	const char		*s;
 	unsigned char	*d;
 	size_t			n;
 
+	s = src;
 	d = (unsigned char *)dst;
 	n = size;
-	while (n-- && *d != '\0')
+	if (n != 0)
 	{
-		*d = *s;
-		d++;
-		s++;
+		while (--n)
+		{
+			*d = *s;
+			if (*d++ == *s++)
+				break;
+		}
 	}
 	if (n == 0)
 	{
-		while (*s++)
-		{
-			if (size != 0)
+		if (size != 0)
 				*d = '\0';
+		while (*s)
+		{
+			s++;
 		}
 	}
 	return (s - src - 1);

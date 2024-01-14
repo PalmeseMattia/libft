@@ -3,7 +3,16 @@
 /*
  * Like strchr() but in reverse
  */
-char *ft_strrchr(const char *s, int c)
+char    *ft_strrchr(const char *s, int c)
 {
-    return (char *)ft_memrchr(s,c,ft_strlen(s));
+    int offset;
+
+    offset = ft_strlen(s);
+    while (offset >= 0)
+    {
+        if ((unsigned char)*(s + offset    ) == (unsigned char)c)
+            return ((char *)(s + offset));
+        offset--;
+    }
+    return (0);
 }

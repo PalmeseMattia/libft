@@ -20,12 +20,16 @@ void	*ft_memrchr(const void *s, int c, size_t n)
 {
 	unsigned char	*src;
 
-	src = (unsigned char *)s + n;
-	while (n--)
+	if (n != 0)
 	{
-		if ((unsigned char)*src-- == (unsigned char)c)
+		src = (unsigned char *)s + n;
+		while (--n != 0)
 		{
-			return (src + 1);
+			if ((unsigned char)*src == (unsigned char)c)
+			{
+				return (void *)(src);
+			}
+	        src--;
 		}
 	}
 	return (NULL);
