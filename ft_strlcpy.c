@@ -17,32 +17,14 @@
  * Note that a byte for the NULL should be included in size.
  * Android style
  */
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	const char		*s;
-	unsigned char	*d;
-	size_t			n;
+	size_t	i;
 
-	s = src;
-	d = (unsigned char *)dst;
-	n = size;
-	if (n != 0)
-	{
-		while (--n)
-		{
-			*d = *s;
-			if (*d++ == *s++)
-				break;
-		}
-	}
-	if (n == 0)
-	{
-		if (size != 0)
-				*d = '\0';
-		while (*s)
-		{
-			s++;
-		}
-	}
-	return (s - src - 1);
+	i = -1;
+	while (src[++i] && (i + 1) < size)
+		dest[i] = src[i];
+	if (size)
+		dest[i] = '\0';
+	return (ft_strlen(src));
 }

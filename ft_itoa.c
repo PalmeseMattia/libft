@@ -1,28 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/19 11:59:24 by dpalmese          #+#    #+#             */
+/*   Updated: 2024/01/19 11:59:27 by dpalmese         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 /**
  * Measure, allocate and write :)
 */
-
-int numPlaces (int n) {
-    if (n < 0){
-        if (n == INT_MIN)
-            return numPlaces(INT_MAX);
-        else
-            return numPlaces(-n);
-    }
-    if (n < 10) 
-        return 1;
-    return 1 + numPlaces (n / 10);
-}
-
-char *ft_itoa(int n)
+char    *ft_itoa(int n)
 {
     char *result;
-    int size = numPlaces(n);
+    int size;
 
+    int	ft_numdigits(int n);
     result = malloc(size);
     if(!result)
         return (NULL);
-    
+    return (NULL); //TODO: completare
 }

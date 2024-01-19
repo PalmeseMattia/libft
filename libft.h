@@ -1,8 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/19 12:05:09 by dpalmese          #+#    #+#             */
+/*   Updated: 2024/01/19 12:05:14 by dpalmese         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #ifndef LIBFT_H
 #define LIBFT_H
 
-#include<string.h>
-#include<stdint.h>
 #include<limits.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -39,5 +48,8 @@ char    *ft_strnstr     (const char *haystack, const char *needle, size_t len);
 void    ft_putchar_fd   (char c, int fd);
 void    ft_putstr_fd    (char *s, int fd);
 void    ft_putendl_fd   (char *s, int fd);
-void    ft_strrev       (char *str)
+void    ft_strrev       (char *str);
+char	*ft_strjoin		( const char *s1, const char *s2);
+int		ft_numdigits	(int n);
+char    *ft_strncpy		(char * dst, const char * src, size_t len);
 #endif

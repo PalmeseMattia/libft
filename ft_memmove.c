@@ -26,7 +26,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	to = (uint8_t *)dest;
 	if (from == to || n == 0)
 		return (dest);
-	if (to > from && to - from < (int)n)
+	else if (to > from && to - from < (int)n)
 	{
 		i = n - 1;
 		while (i >= 0)
@@ -36,16 +36,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 		return (dest);
 	}
-	if (from > to && from - to < (int)n)
+	else
 	{
-		i = 0;
-		while (i < n)
-		{
-			to[i] = from[i];
-			i++;
-		}
+		ft_memcpy(dest, src, n);
 		return (dest);
 	}
-	ft_memcpy(dest, src, n);
-	return (dest);
 }
