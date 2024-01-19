@@ -52,4 +52,5 @@ void    ft_strrev       (char *str);
 char	*ft_strjoin		( const char *s1, const char *s2);
 int		ft_numdigits	(int n);
 char    *ft_strncpy		(char * dst, const char * src, size_t len);
+char	*ft_strmapi		(const char *s, char (*f)(unsigned int, char));
 #endif
