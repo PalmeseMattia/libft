@@ -25,6 +25,19 @@ Functions list:
 - [x] ft_calloc
 - [x] ft_strdup
 
+Part 2:
+- [ ] ft_substr
+- [ ] ft_strjoin
+- [ ] ft_strtrim
+- [ ] ft_split
+- [ ] ft_itoa
+- [ ] ft_strmapi
+- [ ] ft_striteri
+- [x] ft_putchar_fd
+- [x] ft_putstr_fd
+- [x] ft_putendl_fd
+- [ ] ft_putnbr_fd
+
 Extra functions:
 - [x] strcmp
 - [x] isupper
