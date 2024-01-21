@@ -6,7 +6,7 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:28:29 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/01/08 11:28:32 by dpalmese         ###   ########.fr       */
+/*   Updated: 2024/01/21 11:44:39 by dpalmese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	}
 	p = malloc(nmemb * size);
+    if (!p)
+		return (NULL);
 	ft_bzero(p, nmemb);
 	return (p);
 }
