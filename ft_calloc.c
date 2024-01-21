@@ -26,7 +26,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	}
 	p = malloc(nmemb * size);
-    if (!p)
+	if (!p)
 		return (NULL);
 	ft_bzero(p, nmemb);
 	return (p);

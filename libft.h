@@ -16,6 +16,7 @@
 #include<stdlib.h>
 #include<unistd.h>
 
+#define ASCII_ZERO 48
 typedef struct s_list
 {
 	void *content;
@@ -66,4 +67,5 @@ void			ft_lstiter		(t_list *lst, void (*f)(void *));
 t_list			*ft_lstlast		(t_list *lst);
 t_list			*ft_lstnew		(void *content);
 int				ft_lstsize		(t_list *lst);
+char			*ft_itoa		(int n);
 #endif
