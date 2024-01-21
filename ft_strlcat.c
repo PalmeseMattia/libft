@@ -20,10 +20,10 @@ unsigned int	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	maxlen = dstsize - ft_strlen(dst) - 1;
 	srclen = ft_strlen(src);
 	dstlen = ft_strnlen(dst, dstsize);
-    if (!dst || !src)
-        return (0);
-    if (dstsize == 0)
-        return (unsigned int)(srclen);
+	if (!dst || !src)
+		return (0);
+	if (dstsize == 0)
+		return ((unsigned int)srclen);
 	if (dstlen == dstsize)
 		return (dstsize + srclen);
 	if (srclen < dstsize - dstlen)

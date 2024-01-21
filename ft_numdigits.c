@@ -13,14 +13,17 @@
 
 int	ft_numdigits(int n)
 {
+	int	i;
+
+	i = 0;
+	if (n == 0)
+		i++;
 	if (n < 0)
+		i++;
+	while (n)
 	{
-		if (n == INT_MIN)
-			return (ft_numdigits(INT_MAX));
-		else
-			return (ft_numdigits(-n));
+		i++;
+		n /= 10;
 	}
-	if (n < 10)
-		return (1);
-	return (1 + ft_numdigits (n / 10));
+	return (i);
 }
