@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 12:40:28 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/01/08 12:43:46 by dpalmese         ###   ########.fr       */
+/*   Created: 2024/01/21 16:21:44 by dpalmese          #+#    #+#             */
+/*   Updated: 2024/01/21 16:21:47 by dpalmese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, const char *src, size_t dstsize)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-	size_t	len_dst;
-	size_t	srclen;
+	t_list	*new;
+	t_list	*tmp;
 
-	i = 0;
-	srclen = ft_strlen(src);
-	if (dstsize == 0)
-		return ((unsigned int)srclen);
-	if (dstsize < ft_strlen(dest))
-		return (dstsize + srclen);
-	len_dst = ft_strlen(dest);
-	while (dstsize > len_dst + i + 1 && src[i])
+	if (!lst || !f || !del)
+		return (0);
+	new = NULL;
+	while (lst)
 	{
-		dest[i + len_dst] = src[i];
-		i++;
+		tmp = ft_lstnew((*f)(lst->content));
+		if (!tmp)
+		{
+			ft_lstclear(&new, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new, tmp);
+		lst = lst->next;
 	}
-	dest[i + len_dst] = '\0';
-	return (len_dst + srclen);
+	return (new);
 }
