@@ -18,12 +18,12 @@
  */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	uint8_t	*from;
-	uint8_t	*to;
-	int		i;
+	unsigned char	*from;
+	unsigned char	*to;
+	int				i;
 
-	from = (uint8_t *)src;
-	to = (uint8_t *)dest;
+	from = (unsigned char *)src;
+	to = (unsigned char *)dest;
 	if (from == to || n == 0)
 		return (dest);
 	else if (to > from && to - from < (int)n)
