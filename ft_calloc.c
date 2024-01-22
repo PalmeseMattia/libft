@@ -20,14 +20,19 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*p;
+	size_t	bytes,
 
+	bytes = nmemb * size;
 	if (nmemb == 0 || size == 0)
 	{
-		return (NULL);
+		nmemb = 1;
+		size = 1;
 	}
-	p = malloc(nmemb * size);
+	if (bytes / size != nmemb)
+		return (NULL);
+	p = malloc(bytes);
 	if (!p)
 		return (NULL);
-	ft_bzero(p, nmemb);
+	ft_bzero(p, bytes);
 	return (p);
 }
