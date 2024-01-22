@@ -25,8 +25,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	bytes = nmemb * size;
 	if (nmemb == 0 || size == 0)
 	{
-		nmemb = 1;
-		size = 1;
+		ft_calloc(1,1);
 	}
 	if (bytes / size != nmemb)
 		return (NULL);
