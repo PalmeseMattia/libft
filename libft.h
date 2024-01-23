@@ -72,4 +72,5 @@ char			*ft_itoa		(int n);
 char			*ft_substr		(char const *s, unsigned int start, size_t len);
 void			ft_striteri		(char *s, void (*f)(unsigned int, char*));
 char			*ft_strtrim		(char const *s1, char const *set);
+void			ft_putnbr_fd	(int n, int fd);
 #endif
