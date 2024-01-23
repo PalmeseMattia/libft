@@ -24,13 +24,13 @@ Part 1 functions:
 - [x] ft_strdup
 
 Part 2 functions:
-- [ ] ft_substr
+- [x] ft_substr
 - [x] ft_strjoin
 - [ ] ft_strtrim
 - [ ] ft_split
-- [ ] ft_itoa
+- [x] ft_itoa
 - [x] ft_strmapi
-- [ ] ft_striteri
+- [x] ft_striteri
 - [x] ft_putchar_fd
 - [x] ft_putstr_fd
 - [x] ft_putendl_fd
@@ -45,4 +45,4 @@ Bonus functions:
 - [x] ft_lstdelone
 - [x] ft_lstclear
 - [x] ft_lstiter
-- [ ] ft_lstmap
+- [x] ft_lstmap

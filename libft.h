@@ -69,5 +69,6 @@ t_list			*ft_lstnew		(void *content);
 int				ft_lstsize		(t_list *lst);
 t_list			*ft_lstmap		(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char			*ft_itoa		(int n);
-char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_substr		(char const *s, unsigned int start, size_t len);
+void			ft_striteri		(char *s, void (*f)(unsigned int, char*));
 #endif
