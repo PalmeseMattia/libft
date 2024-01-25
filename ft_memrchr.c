@@ -27,9 +27,9 @@ void	*ft_memrchr(const void *s, int c, size_t n)
 		{
 			if ((unsigned char)*src == (unsigned char)c)
 			{
-				return (void *)(src);
+				return ((void *)(src));
 			}
-	        src--;
+			src--;
 		}
 	}
 	return (NULL);
