@@ -15,10 +15,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*src;
 	char	*result;
-	int		src_len;
 
 	src = (char *)s + start;
-	src_len = ft_strlen(src);
 	result = malloc(sizeof(char) * len);
 	ft_strlcpy(result, src, len + 1);
 	return (result);
