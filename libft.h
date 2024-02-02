@@ -6,7 +6,7 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:05:09 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/01/19 12:05:14 by dpalmese         ###   ########.fr       */
+/*   Updated: 2024/02/02 19:45:58 by dpalmese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -77,4 +77,5 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strtrim(char const *s1, char const *set);
 void				ft_putnbr_fd(int n, int fd);
 char				**ft_split(char const *s, char c);
+size_t				ft_putnstr_fd(char *s, int len, int fd);
 #endif
