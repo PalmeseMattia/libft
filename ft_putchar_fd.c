@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
 	if (fd < 0)
-		return ;
+		return (0);
 	write(fd, &c, 1);
+	return (1);
 }
