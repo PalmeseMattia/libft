@@ -18,6 +18,5 @@ size_t	ft_putstr_fd(char *s, int fd)
 	if (fd < 0)
 		return (0);
 	size = ft_strlen(s);
-	write(fd, s, size);
-	return (size);
+	return (write(fd, s, size));
 }
