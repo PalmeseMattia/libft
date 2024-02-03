@@ -6,7 +6,7 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:05:09 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/02/02 19:45:58 by dpalmese         ###   ########.fr       */
+/*   Updated: 2024/02/03 11:27:12 by rizz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -53,9 +53,9 @@ void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *s);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
-void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char *s, int fd);
-void				ft_putendl_fd(char *s, int fd);
+int					ft_putchar_fd(char c, int fd);
+size_t				ft_putstr_fd(char *s, int fd);
+size_t				ft_putendl_fd(char *s, int fd);
 void				ft_strrev(char *str);
 char				*ft_strjoin(const char *s1, const char *s2);
 int					ft_numdigits(int n);
@@ -78,4 +78,5 @@ char				*ft_strtrim(char const *s1, char const *set);
 void				ft_putnbr_fd(int n, int fd);
 char				**ft_split(char const *s, char c);
 size_t				ft_putnstr_fd(char *s, int len, int fd);
+int					ft_putnbrbase_fd(int number, int base, int fd);
 #endif
