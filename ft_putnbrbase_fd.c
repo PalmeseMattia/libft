@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	ft_putnbrbase_fd(int number, int base, int fd)
+int	ft_putnbrbase_fd(unsigned long number, int base, int fd)
 {
 	char *digits;
 	int result;
