@@ -6,7 +6,11 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:05:09 by dpalmese          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/02/04 17:53:15 by dpalmese         ###   ########.fr       */
+=======
+/*   Updated: 2024/02/03 15:34:35 by rizz             ###   ########.fr       */
+>>>>>>> 7a8b37fe252a0cfc82562120fef47fc2add8f926
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -78,6 +82,10 @@ char				*ft_strtrim(char const *s1, char const *set);
 void				ft_putnbr_fd(int n, int fd);
 char				**ft_split(char const *s, char c);
 size_t				ft_putnstr_fd(char *s, int len, int fd);
+<<<<<<< HEAD
 int					ft_putnbrbase_fd(int number, int base, int fd);
 int					ft_putpointer_fd(void *p, int fd);
+=======
+int					ft_putnbrbase_fd(long number, int base, int fd);
+>>>>>>> 7a8b37fe252a0cfc82562120fef47fc2add8f926
 #endif
