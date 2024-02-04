@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numdigits.c                                     :+:      :+:    :+:   */
+/*   ft_putpointer_fd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/19 12:00:54 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/02/03 10:08:02 by rizz             ###   ########.fr       */
+/*   Created: 2024/02/04 17:54:21 by dpalmese          #+#    #+#             */
+/*   Updated: 2024/02/04 17:54:32 by dpalmese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_numdigits(int n)
+// TODO: create a put hex
+int	ft_putpointer_fd(void *p, int fd)
 {
-	int	i;
+	unsigned long int	value;
+	int					i;
+	int					result;
+	unsigned char		byte;
 
-	i = 0;
-	if (n == 0)
-		return (1);
-	while (n)
+	i = 8;
+	result = 0;
+	value = (unsigned long int) p;
+	result += ft_putstr_fd("0x", fd);
+	while (i >= 0)
 	{
-		i++;
-		n /= 10;
+		byte = (value >> (i * 4)) & 0xF;
+		result += ft_putnbrbase_fd(byte, 16, 1);
+		i--;
 	}
-	return (i);
+	return (result);
 }
