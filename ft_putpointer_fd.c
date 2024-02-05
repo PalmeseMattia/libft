@@ -6,27 +6,33 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:54:21 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/02/04 18:10:51 by dpalmese         ###   ########.fr       */
+/*   Updated: 2024/02/05 10:15:50 by rizz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdint.h>
 
 // TODO: create a put hex
 int	ft_putpointer_fd(void *p, int fd)
 {
-	unsigned long int	value;
+	uintptr_t			value;
 	int					i;
 	int					result;
 	unsigned char		byte;
 
-	i = 8;
+	i = (sizeof(void *) - 1) * 2;
 	result = 0;
-	value = (unsigned long int) p;
+	value = (uintptr_t) p;
 	result += ft_putstr_fd("0x", fd);
+	while (i >= 0 && byte == 0)
+	{
+		i--;
+		byte = (value >> (i * 4)) & 0xF;
+	}
 	while (i >= 0)
 	{
 		byte = (value >> (i * 4)) & 0xF;
-		result += ft_putnbrbase_fd(byte, 16, 1);
+		result += ft_putnbrbase_fd((long)byte, 16, 1);
 		i--;
 	}
 	return (result);
