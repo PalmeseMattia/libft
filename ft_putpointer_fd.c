@@ -6,31 +6,38 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:54:21 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/02/05 10:17:36 by rizz             ###   ########.fr       */
+/*   Updated: 2024/02/05 10:47:44 by rizz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-// TODO: create a put hex
+#define MASK(data, shift) ((data >> (shift * 4)) & 0xF)
+#define NIBBLES(x) sizeof(x) * 2
+
+/*
+ * Write the address pointed by p to the file descriptor fd,
+ * returning the number of characters printed.
+ */
 int	ft_putpointer_fd(void *p, int fd)
 {
-	uintptr_t			value;
+	uintptr_t			p_intvalue;
 	int					i;
 	int					result;
 	unsigned char		byte;
 
-	i = (sizeof(void *) - 1) * 2;
 	result = 0;
-	value = (uintptr_t) p;
+	i = NIBBLES(p);
+	p_intvalue = (uintptr_t) p;
 	result += ft_putstr_fd("0x", fd);
+	byte = MASK(p_intvalue, i);
 	while (i >= 0 && byte == 0)
 	{
 		i--;
-		byte = (value >> (i * 4)) & 0xF;
+		byte = MASK(p_intvalue, i);
 	}
 	while (i >= 0)
 	{
-		byte = (value >> (i * 4)) & 0xF;
+		byte = MASK(p_intvalue, i);
 		result += ft_putnbrbase_fd((long)byte, 16, 1);
 		i--;
 	}
