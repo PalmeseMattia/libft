@@ -6,11 +6,10 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:54:21 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/02/05 10:15:50 by rizz             ###   ########.fr       */
+/*   Updated: 2024/02/05 10:17:36 by rizz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdint.h>
 
 // TODO: create a put hex
 int	ft_putpointer_fd(void *p, int fd)

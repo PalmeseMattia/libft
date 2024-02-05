@@ -6,7 +6,7 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:05:09 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/02/04 18:05:44 by dpalmese         ###   ########.fr       */
+/*   Updated: 2024/02/05 10:17:57 by rizz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -15,7 +15,7 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-
+# include <stdint.h>
 # define ASCII_ZERO 48
 
 typedef struct s_list
