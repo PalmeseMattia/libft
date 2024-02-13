@@ -6,7 +6,7 @@
 /*   By: dpalmese <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:05:09 by dpalmese          #+#    #+#             */
-/*   Updated: 2024/02/07 16:05:47 by dpalmese         ###   ########.fr       */
+/*   Updated: 2024/02/13 12:12:29 by dpalmese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -16,13 +16,18 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <stdarg.h>
+
 # define ASCII_ZERO 48
+# define CHAR_SIZE 1
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+int					ft_printf(const char *format, ...);
+int					ft_manage_conversion(char *conversion, va_list arguments);
 void				*ft_memset(void *ptr, int value, size_t n);
 void				ft_bzero(void *ptr, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
