@@ -76,6 +76,7 @@ char	**ft_split(const char *str, char c)
 		return (NULL);
 	n_words = count_words(str, c);
 	arr = ft_calloc(n_words + 1, sizeof(char *));
+	arr[n_words] = NULL;
 	if (!arr)
 		return (NULL);
 	aux(arr, str, c);

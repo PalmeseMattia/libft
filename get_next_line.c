@@ -6,7 +6,7 @@
 /*   By: rizz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 12:05:26 by rizz              #+#    #+#             */
-/*   Updated: 2024/05/18 12:05:51 by rizz             ###   ########.fr       */
+/*   Updated: 2024/10/05 08:22:48 by dpalmese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,7 +16,6 @@ char	*get_next_line(int fd)
 	t_node		*list;
 	char		*result;
 	static char	*buffer = NULL;
-	t_node		*next;
 
 	list = NULL;
 	if (fd < 0)
@@ -26,17 +25,13 @@ char	*get_next_line(int fd)
 	create_list(fd, &list, buffer);
 	if (!list)
 	{
-		free(buffer);
+		if (buffer)
+			free(buffer);
+		buffer = NULL;
 		return (NULL);
 	}
 	result = join_list(&list, buffer);
-	while (list)
-	{
-		next = list->next;
-		free(list->str);
-		free(list);
-		list = next;
-	}
+	free_list(list);
 	return (result);
 }
 
